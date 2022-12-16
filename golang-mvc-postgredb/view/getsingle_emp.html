@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #234d80;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        background-color: #0095ff;
+        border: 1px solid transparent;
+        border-radius: 0px;
+        box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #6f9fd8;
+      }
+
+      .active {
+        background-color: #6f9fd8;
+      }
+
+      /* ///////////////////////// Header//////////////////////// */
+      table {
+        display: flex;
+        justify-content: center;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 10%;
+      }
+
+      th {
+        border-radius: 2px;
+        text-align: center;
+        padding: 8px;
+        background: #558dd1;
+        color: #fff;
+      }
+      td {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        background: #fff;
+      }
+
+      tr {
+        background-color: #ddd;
+      }
+
+      .notice {
+        background: #eee;
+        padding: 0;
+        margin: 0;
+        height: 170px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      }
+
+      .board {
+        max-width: 1100px;
+        margin: 0, auto;
+        padding: 0, 40px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="http://localhost:8080/v1/employee/home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li style="float: right"><a class="active" href="#about">About</a></li>
+    </ul>
+
+    <!-- <div class="notice">
+    <div class="board">
+<h2>MVC Patterns MIBS</h2>
+    </div>
+</div> -->
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+      </tr>
+      {{range .}}
+      <tr>
+        <td>{{.Id}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Email}}</td>
+        <td>{{.Salary}}</td>
+        <td>{{.Cdate}}</td>
+        <td>{{.Udate}}</td>
+      </tr>
+      {{end}}
+    </table>
+  </body>
+
+  <!-- Mirrored from www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Feb 2019 06:15:59 GMT -->
+</html>

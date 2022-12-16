@@ -1,0 +1,42 @@
+[
+ {
+  "method": "POST",
+  "path": "/v1/employee/addemployee",
+  "name": "github.com/ellipizle/golang-mvc/controller.(*Controller).AddEmployee-fm"
+ },
+ {
+  "method": "POST",
+  "path": "/v1/employee/updates/:id",
+  "name": "github.com/ellipizle/golang-mvc/controller.(*Controller).UpdateEmployee-fm"
+ },
+ {
+  "method": "GET",
+  "path": "/v1/employee/delete/:id",
+  "name": "github.com/ellipizle/golang-mvc/controller.(*Controller).DeleteEmployee-fm"
+ },
+ {
+  "method": "GET",
+  "path": "/v1/employee/singleemployee/:id",
+  "name": "github.com/ellipizle/golang-mvc/controller.(*Controller).GetEmployee-fm"
+ },
+ {
+  "method": "GET",
+  "path": "/v1/employee/home",
+  "name": "github.com/ellipizle/golang-mvc/controller.(*Controller).Home-fm"
+ },
+ {
+  "method": "GET",
+  "path": "/v1/employee/add",
+  "name": "github.com/ellipizle/golang-mvc/controller.(*Controller).Addepage-fm"
+ },
+ {
+  "method": "GET",
+  "path": "/v1/employee/update/:id",
+  "name": "github.com/ellipizle/golang-mvc/controller.(*Controller).Updateemp-fm"
+ },
+ {
+  "method": "GET",
+  "path": "/v1/employee/allemployee",
+  "name": "github.com/ellipizle/golang-mvc/controller.(*Controller).GetAllEmployee-fm"
+ }
+]

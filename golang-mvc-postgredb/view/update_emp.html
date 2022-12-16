@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        background-color: #760be0;
+        border: 1px solid transparent;
+        border-radius: 0px;
+        box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #6f9fd8;
+      }
+
+      .active {
+        background-color: #0095ff;
+      }
+
+      /* ///////////////////////// Header//////////////////////// */
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #558dd1;
+        border-radius: 4px;
+        resize: vertical;
+        font-size: medium;
+        background: #f6f9fd;
+      }
+
+      input[type="email"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #558dd1;
+        border-radius: 4px;
+        resize: vertical;
+        font-size: medium;
+        background: #f6f9fd;
+      }
+
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+
+      /* CSS */
+      .btn {
+        background: #8614f8;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+          sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.15385;
+        margin: 0;
+        outline: none;
+        padding: 8px 0.8em;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        white-space: nowrap;
+        margin: 30px;
+        padding: 60px 40px 60px;
+        font-weight: 900;
+      }
+
+      .btn:hover,
+      .btn:focus {
+        background-color: #07c;
+      }
+
+      .btnfocus {
+        box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+      }
+
+      .btn:active {
+        background: #8614f8;
+        box-shadow: none;
+      }
+
+      input[type="submit"] {
+        background: #8614f8;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+          sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.15385;
+        margin: 0;
+        outline: none;
+        padding: 8px 0.8em;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        white-space: nowrap;
+        margin-top: 10px;
+        width: 75%;
+        margin-left: 80px;
+        /* font-weight: 900; */
+      }
+
+      input[type="submit"]:hover {
+        background-color: #234d80;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border-radius: 5px;
+        /* background-color: #f2f2f2; */
+        padding: 10px;
+      }
+
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+      }
+
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+
+      /* .row:after {
+  content: "";
+  display: table;
+  clear: both;
+} */
+
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .col-25,
+        .col-75,
+        input[type="submit"] {
+          width: 100%;
+          margin-top: 0;
+        }
+        .container {
+          margin-left: 0%;
+        }
+      }
+
+      .notice {
+        background-image: linear-gradient(#8614f8 0, #760be0 100%);
+        /* background-image: linear-gradient(to bottom right, #fcd34d, #ef4444, #ec4899); */
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        height: 250px;
+        /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+      }
+
+      .board {
+        max-width: 1100px;
+        margin: 0, auto;
+        padding: 50, 40px;
+        margin-left: 110px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="http://localhost:8080/v1/employee/home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li style="float: right"><a class="active" href="#about">About</a></li>
+    </ul>
+
+    <div class="notice">
+      <div class="board">
+        <h2>MIBS API 1.0</h2>
+        <p>http://localhost:8080/v1/employee</p>
+      </div>
+    </div>
+
+    <!-- action="http://localhost:8080/v1/employee/updates/225ab4f5-7cab-402c-9314-fe260c09c61f" -->
+    <div class="container">
+      <form
+        method="POST"
+        action="http://localhost:8080/v1/employee/updates/{{.Id}}"
+      >
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Id</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="text"
+              id="id"
+              name="empid"
+              value="{{.Id}}"
+              placeholder="Your Id.."
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Name</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value="{{.Name}}"
+              placeholder="Your Name.."
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="email">Email</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="{{.Email}}"
+              placeholder="Your Email.."
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="email">Salary</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="text"
+              id="salary"
+              name="salary"
+              value="{{.Salary}}"
+              placeholder="Your Salary.."
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+
+  <!-- Mirrored from www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Feb 2019 06:09:13 GMT -->
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #6f9fd8;
+}
+
+.active {
+  background-color: #6f9fd8;
+}
+
+/* ///////////////////////// Header//////////////////////// */
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  flex-direction: row;
+  padding: 20px;
+  margin-top: 15%;
+  max-width: 60%;
+  margin-left: 280px;
+  /* background:cornsilk; */
+  background-color: #FFE7E7;
+  background-position: 0 0;
+  border: 1px solid #FEE0E0;
+  border-radius: 11px;
+  box-sizing: border-box;
+  
+  /* background-color: #f7fcfd; */
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+}
+
+.bb{
+  text-align: center;
+  padding:0;
+  margin: 10px;
+  margin-top: 1px;
+  /* background: #fff; */
+  font-size: larger;
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+
+}
+
+.container:active,
+.container:hover,
+.container:focus {
+  outline: 0;
+}
+
+
+.container:active {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+.container:hover {
+  background-color: #FFE3E3;
+  border-color: #FAA4A4;
+}
+
+.container:active:hover,
+.container:focus:hover,
+.container:focus {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+
+@media screen and (max-width: 600px) {
+  .container{
+    margin-left: 10%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+</style>
+</head>
+<body>
+
+  <ul>
+    <li><a href="http://localhost:8080/v1/employee/home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li style="float:right"><a class="active" href="#about">About</a></li>
+  </ul>
+
+<div class="container">
+ <div class="bb">
+   {{.}} 
+  <p>Successfully Updated</p>
+   </div>
+</div>
+
+</body>
+
+<!-- Mirrored from www.w3schools.com/css/tryit.asp?filename=trycss_align_text by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Feb 2019 06:09:09 GMT -->
+</html>

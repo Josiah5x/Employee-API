@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #760be0;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        /* background-color: #0095ff; */
+        border: 1px solid transparent;
+        border-radius: 0px;
+        box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #6f9fd8;
+      }
+
+      .active {
+        background-color: #6f9fd8;
+      }
+
+      /* ///////////////////////// Header//////////////////////// */
+      table {
+        display: flex;
+        justify-content: center;
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        margin-top: 5%;
+        width: 100%;
+      }
+
+      th {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+        /* border-radius: 2px; */
+        text-align: center;
+        padding: 8px;
+        background: #4040ac;
+        color: #fff;
+      }
+      td {
+        background: #fff;
+        backface-visibility: hidden;
+        /* border-radius: 0.375rem; */
+        border: 1px solid #ccc;
+      }
+      tr {
+        background-color: #ddd;
+      }
+
+      .notice {
+        background: #eee;
+        padding: 0;
+        margin: 0;
+        height: 170px;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      }
+
+      .board {
+        max-width: 1100px;
+        margin: 0, auto;
+        padding: 0, 40px;
+        overflow: auto;
+      }
+
+      .edit {
+        background-color: initial;
+        background: linear-gradient(#8614f8 0, #674a85 100%);
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue",
+          Arial, sans-serif;
+        height: 30px;
+        line-height: 30px;
+        outline: 0;
+        overflow: hidden;
+        padding: 0 15px;
+        pointer-events: auto;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: top;
+        white-space: nowrap;
+        width: 40%;
+        z-index: 9;
+        border: 0;
+        transition: box-shadow 0.2s;
+        text-decoration: none;
+      }
+      .edit:hover,
+      .edit:focus {
+        background-color: #fb8332;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+      }
+
+      .edit:hover {
+        transform: translateY(-1px);
+      }
+
+      .edit:active {
+        background-color: #c85000;
+        box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+        transform: translateY(0);
+      }
+      .view {
+        background-color: initial;
+        background: green;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue",
+          Arial, sans-serif;
+        height: 30px;
+        line-height: 30px;
+        outline: 0;
+        overflow: hidden;
+        padding: 0 15px;
+        pointer-events: auto;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: top;
+        white-space: nowrap;
+        width: 40%;
+        z-index: 9;
+        border: 0;
+        transition: box-shadow 0.2s;
+        text-decoration: none;
+      }
+      .view:hover,
+      .view:focus {
+        background-color: rgb(99, 151, 21);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+      }
+
+      .view:hover {
+        transform: translateY(-1px);
+      }
+
+      .view:active {
+        background-color: rgb(17, 151, 17);
+        box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+        transform: translateY(0);
+      }
+
+      .delete {
+        background-color: initial;
+        background-image: linear-gradient(-180deg, #ff7e31, #e62c03);
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue",
+          Arial, sans-serif;
+        height: 30px;
+        line-height: 30px;
+        outline: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        pointer-events: auto;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: top;
+        white-space: nowrap;
+        width: 55%;
+        z-index: 9;
+        border: 0;
+        transition: box-shadow 0.2s;
+        text-decoration: none;
+        text-decoration: none;
+      }
+
+      .delete:hover,
+      .delete:focus {
+        background-color: #fb8332;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+      }
+
+      .delete:hover {
+        transform: translateY(-1px);
+      }
+
+      .delete:active {
+        background-color: #c85000;
+        box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="http://localhost:8080/v1/employee/home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li style="float: right"><a class="active" href="#about">About</a></li>
+    </ul>
+
+    <div class="notice">
+      <div class="board">
+        <h2>MVC Patterns MIBS</h2>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Created_date</th>
+        <th>Updated_date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+      </tr>
+      {{range .}}
+      <tr>
+        <td>{{.Id}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Email}}</td>
+        <td>{{.Salary}}</td>
+        <td>{{.Cdate}}</td>
+        <td>{{.Udate}}</td>
+        <td>
+          <a
+            class="edit"
+            href="http://localhost:8080/v1/employee/update/{{ .Id }}"
+            >Edit</a
+          >
+        </td>
+        <td>
+          <a
+            class="delete"
+            onclick="DeleteEmp()"
+            href="http://localhost:8080/v1/employee/delete/{{ .Id }}"
+            >Delete</a
+          >
+          <!-- <button class="btn" onclick="DeleteEmp()">Delete</button> -->
+        </td>
+        <td>
+          <a
+            class="view"
+            href="http://localhost:8080/v1/employee/view/{{ .Id }}"
+            >View</a
+          >
+          <!-- <button class="btn" onclick="DeleteEmp()">Delete</button> -->
+        </td>
+      </tr>
+      {{end}}
+    </table>
+    <script>
+      function DeleteEmp() {
+        var txt;
+        if (confirm("are sure you want to delete!")) {
+          txt = "You pressed OK!";
+        } else {
+          txt = "You pressed Cancel!";
+        }
+      }
+
+      // alert("Are You sure on what to delete")
+    </script>
+  </body>
+
+  <!-- Mirrored from www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Feb 2019 06:15:59 GMT -->
+</html>

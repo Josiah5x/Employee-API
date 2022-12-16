@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: ghostwhite;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        background-color: #760be0;
+        border: 1px solid transparent;
+        border-radius: 0px;
+        box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #6f9fd8;
+      }
+
+      .active {
+        background-color: #6f9fd8;
+      }
+
+      /* ///////////////////////// Header//////////////////////// */
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #558dd1;
+        border-radius: 4px;
+        resize: vertical;
+        font-size: medium;
+        background: #f6f9fd;
+      }
+
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+
+      /* CSS */
+      .btn {
+        background: #8614f8;
+        /* background-image: linear-gradient(to left bottom, #fcd34d, #ef4444, #ec4899); */
+        /* background-color: #0095ff; */
+        border: 1px solid transparent;
+        border-radius: 3px;
+        box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans",
+          sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.15385;
+        margin: 0;
+        outline: none;
+        padding: 8px 0.8em;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+        white-space: nowrap;
+        margin: 40px;
+        padding: 20px 40px;
+        font-weight: 900;
+      }
+
+      .btn:hover,
+      .btn:focus {
+        background-color: #07c;
+      }
+
+      .btnfocus {
+        box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+      }
+
+      .btn:active {
+        background-color: #0064bd;
+        box-shadow: none;
+      }
+
+      input[type="submit"] {
+        background-color: #558dd1;
+        color: white;
+        margin: 30px;
+        padding: 60px 40px 60px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        /* font-weight: 900; */
+        font-size: medium;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #2a5c9a;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        flex-direction: row;
+        padding: 20px;
+        margin-top: 30px;
+        max-width: 80%;
+        margin-left: 150px;
+        background: #fff;
+
+        /* background-color: #f7fcfd; */
+        /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+      }
+
+      .bb {
+        text-align: center;
+        padding: 0;
+        margin: 10px;
+        margin-top: 1px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+      }
+
+      .col-25 {
+        display: flex;
+        /* flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  flex-flow: row wrap;  */
+      }
+
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .col-25,
+        .col-75,
+        input[type="submit"] {
+          width: 100%;
+          margin-top: 0;
+        }
+        .container {
+          margin-left: 10%;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .notice {
+        background-image: linear-gradient(#8614f8 0, #760be0 100%);
+        /* background-image: linear-gradient(to bottom right, #fcd34d, #ef4444, #ec4899); */
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        height: 250px;
+        /* box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; */
+      }
+
+      .board {
+        max-width: 1100px;
+        margin: 0, auto;
+        padding: 50, 40px;
+        margin-left: 110px;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="http://localhost:8080/v1/employee/home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li style="float: right"><a class="active" href="#about">About</a></li>
+    </ul>
+
+    <div class="notice">
+      <div class="board">
+        <h2>MIBS API 1.0</h2>
+        <p>http://localhost:8080/v1/employee</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="bb">
+        <a href="http://localhost:8080/v1/employee/allemployee" class="btn"
+          >GET</a
+        >
+        <h4>
+          <b style="background: #07c; color: #fff">Get All Employee</b>
+          http://localhost:8080/v1/employee
+        </h4>
+      </div>
+      <div class="bb">
+        <a href="http://localhost:8080/v1/employee/add" class="btn">POST</a>
+        <h4>
+          <b style="background: #07c; color: #fff">Add New Employee </b>
+          http://localhost:8080/v1/employee
+        </h4>
+      </div>
+      <div class="bb">
+        <button class="btn" onclick="UpdateUser()">PUT</button>
+        <h4>
+          <b style="background: #07c; color: #fff">Update Employee</b>
+          http://localhost:8080/v1/employee
+        </h4>
+      </div>
+      <div class="bb">
+        <button class="btn" onclick="DeleteEmp()">DELETE</button>
+        <!-- <a href="#" class="btn" on>DELETE</a> -->
+        <h4>
+          <b style="background: #07c; color: #fff">Delete Employee</b>
+          http://localhost:8080/v1/employee
+        </h4>
+      </div>
+      <div class="bb">
+        <button class="btn" onclick="GetSingleEmp()">GET</button>
+
+        <h4>
+          <b style="background: #07c; color: #fff">Get Single User</b>
+          http://localhost:8080/v1/employee
+        </h4>
+      </div>
+    </div>
+
+    <script>
+      function GetSingleEmp() {
+        var txt;
+        var empid = prompt("Please enter your name:");
+        if (empid == null || empid == "") {
+          window.location.href("http://localhost:8080/v1/employee/home");
+        } else {
+          txt = "http://localhost:8080/v1/employee/singleemployee/" + empid;
+        }
+
+        window.location.assign(txt);
+        // <a href="http://localhost:8080/v1/employee/02502d23-2df2-4c9f-a5ad-7bd7b99cecc3"></a>
+      }
+
+      function UpdateUser() {
+        var txt;
+        var empid = prompt("Please enter your name:");
+        if (empid == null || empid == "") {
+          window.location.href("http://localhost:8080/v1/employee/home");
+        } else {
+          txt = "http://localhost:8080/v1/employee/update/" + empid;
+          var urlstr = txt.trim();
+          // alert(person)
+        }
+        window.location.assign(txt);
+        // <a href="http://localhost:8080/v1/employee/02502d23-2df2-4c9f-a5ad-7bd7b99cecc3"></a>
+      }
+
+      function DeleteEmp() {
+        var txt;
+        var empid = prompt("enter your id number here");
+        if (empid == null || empid == "") {
+          window.location.href("http://localhost:8080/v1/employee/home");
+        } else {
+          txt = "http://localhost:8080/v1/employee/delete/" + empid;
+          var urlstr = txt.trim();
+        }
+        window.location.assign(txt);
+        // <a href="http://localhost:8080/v1/employee/02502d23-2df2-4c9f-a5ad-7bd7b99cecc3"></a>
+      }
+    </script>
+  </body>
+  <!-- Mirrored from www.w3schools.com/css/tryit.asp?filename=trycss_form_responsive by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Feb 2019 06:09:13 GMT -->
+</html>
